@@ -1,0 +1,48 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #FFF8E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.p {
+    color: #66806A;
+}
+.keywordtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px; /* 원하는 너비로 설정 */
+}
+.keyword {
+    width: 100%;
+    margin: 15px 0; /* 여백을 약간 더 추가 */
+    padding: 15px; /* 패딩을 키워 입력 필드 높이 증가 */
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 15px; /* 패딩을 키워 버튼 높이 증가 */
+    margin: 15px 0; /* 여백을 약간 더 추가 */
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #66806A;
+    color: #FFF; /* 버튼 텍스트 색상 */
+    font-weight: bold; /* 버튼 텍스트 두껍게 */
+}

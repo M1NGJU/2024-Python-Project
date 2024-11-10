@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeywordText</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='keywordtext.css') }}">
+</head>
+<body>
+    <div class="container">
+        <p>원하는 키워드를 작성해주세요.</p>
+        <div class="keywordtext">
+            <form method="post" action="" id="keyword-form">
+                <input type="text" name="keyword" class="keyword" placeholder="Keyword"><br>
+                <input type="submit" value="입력 완료">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

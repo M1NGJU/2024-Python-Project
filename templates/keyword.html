@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='keyword.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="{{ url_for('static', filename='30DayLogo.png') }}">
+        </div>
+        <p>30일 동안 하고 싶은 챌린지 키워드를 선택 해주세요.</p>
+        
+        <!-- 랜덤 키워드 버튼 -->
+        <div class="keyword">
+            <form method="post" action="" id="kw-form">
+                {% for keyword in random_keywords %}
+                    <input type="button" value="{{ keyword }}">
+                {% endfor %}
+            </form>
+        </div>
+
+        <div class="text">
+            <a href="{{ url_for('keywordtext') }}">원하는 챌린지가 없다면?</a>
+        </div>
+    </div>
+</body>
+</html>

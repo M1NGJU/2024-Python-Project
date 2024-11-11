@@ -1,0 +1,70 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #FFF8E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.img img {
+    max-width: 170px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+p {
+    font-size: 20px;
+    margin-top: -5px;
+    color: #66806A;
+}
+
+/* 버튼 스타일 */
+.keyword input[type="button"] {
+    display: inline-block;
+    background-color: #66806A;
+    color: #FFF8E8;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 버튼 호버 스타일 */
+.keyword input[type="button"]:hover {
+    background-color: #556B58;
+    transform: scale(1.05);
+}
+
+/* 버튼 클릭 시 스타일 */
+.keyword input[type="button"]:active {
+    background-color: #4A5A4E;
+    transform: scale(0.98);
+}
+
+/* 오른쪽 하단에 텍스트 배치 */
+.text {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 20px;
+    color: #66806A;
+}
+a{
+    text-decoration-line: none;
+    color: #66806A;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='setting.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="SettingText" id="logo-header">
+            <img src="{{ url_for('static', filename='30DayLogo.png') }}" alt="Logo">
+            <p>{{ random_text[0] }}</p> <!-- 이미지 아래로 이동 -->
+        </header>        
+        <div class="Setting">
+        </div>
+        <div class="SettingAdd">
+            <p>꾸준히 할 챌린지</p>
+            <form method="post" action="" id="settingAdd-form">
+                <input type="text" name="settingadd" class="settingadd" placeholder="챌린지 추가">
+                <input type="submit" value="입력 완료" class="button1"><br><br><br><br>
+                <input type="submit" value="다음" class="button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

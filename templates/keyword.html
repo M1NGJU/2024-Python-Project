@@ -17,11 +17,10 @@
         <div class="keyword">
             <form method="post" action="" id="kw-form">
                 {% for keyword in random_keywords %}
-                    <input type="button" value="{{ keyword }}">
+                    <button type="submit" name="selected_keyword" value="{{ keyword }}">{{ keyword }}</button>
                 {% endfor %}
             </form>
         </div>
-
         <div class="text">
             <a href="{{ url_for('keywordtext') }}">원하는 챌린지가 없다면?</a>
         </div>

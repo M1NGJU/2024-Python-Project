@@ -10,7 +10,13 @@ keywords = [
     "자격증 공부", "스프링 공부", "안드로이드 공부", "Node 공부하기", "WSM공부", "데이터 분석 공부"
 ]
 
-@app.route('/', methods=['GET', 'POST'])
+# 홈 페이지 라우트
+@app.route('/')
+def home():
+    return render_template("home.html")
+
+# 키워드 선택 페이지 라우트
+@app.route('/keyword', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         selected_keyword = request.form.get('selected_keyword')

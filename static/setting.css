@@ -47,3 +47,9 @@ input[type="submit"]{
     color: #FFF; /* 버튼 텍스트 색상 */
     font-weight: bold; /* 버튼 텍스트 두껍게 */
 }
+.date-range {
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+    font-size: 20px;
+}

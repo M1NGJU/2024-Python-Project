@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import random
+from datetime import datetime
+import calendar
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # session을 사용하기 위해 필요
+app.secret_key = 'your_secret_key_here'
 
 # 키워드 리스트 정의
 keywords = [
@@ -47,7 +49,15 @@ def setting():
     random_text = random.sample(text, 1)
     selected_keyword = session.get('selected_keyword', '선택된 키워드가 없습니다')
     
-    return render_template('setting.html', random_text=random_text, selected_keyword=selected_keyword)
+    # 현재 날짜 정보 가져오기
+    now = datetime.now()
+    last_day = calendar.monthrange(now.year, now.month)[1]
+    date_range = f"{now.month}월 1일 ~ {now.month}월 {last_day}일"
+    
+    return render_template('setting.html', 
+                         random_text=random_text, 
+                         selected_keyword=selected_keyword,
+                         date_range=date_range)
 
 if __name__ == '__main__':
     app.run(debug=True)

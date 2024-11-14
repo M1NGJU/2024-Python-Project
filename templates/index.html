@@ -15,7 +15,14 @@
                 {{ selected_keyword }}
             </div>
         {% endif %}
-
+        <div class="ckList">
+            <form method="post" action="" id="ckList-form">
+                <div class="checkbox-container">
+                    <input type="checkbox" name="ck" class="ck" id="ck1">
+                    <label for="ck1">{{ random_number }}장 공부하기</label>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

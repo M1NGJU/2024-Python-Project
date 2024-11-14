@@ -1,3 +1,4 @@
+# word.py
 from flask import Flask, render_template, request, redirect, url_for, session
 import random
 from datetime import datetime
@@ -38,8 +39,11 @@ def keywordtext():
         return redirect(url_for('setting'))
     return render_template('keywordtext.html')
 
-@app.route('/setting')
+@app.route('/setting', methods=['GET', 'POST'])
 def setting():
+    if request.method == 'POST':
+        return redirect(url_for('calendar_view'))  # 새로운 라우트로 리다이렉트
+        
     text = [
         "작은 변화가 큰 차이를 만든다.", "오늘의 노력이 내일의 성과를 만든다.",
         "포기하지 마라. 지금 포기하면 어제의 실패를 되풀이할 뿐이다.",
@@ -58,6 +62,34 @@ def setting():
                          random_text=random_text, 
                          selected_keyword=selected_keyword,
                          date_range=date_range)
+
+@app.route('/calendar')
+def calendar_view():
+    # 현재 날짜 가져오기
+    current_date = datetime.now()
+    
+    # 월 이름을 한글로 변환하는 딕셔너리
+    month_kr = {
+        1: '1월', 2: '2월', 3: '3월', 4: '4월',
+        5: '5월', 6: '6월', 7: '7월', 8: '8월',
+        9: '9월', 10: '10월', 11: '11월', 12: '12월'
+    }
+    
+    # 다양한 형식으로 날짜 표시
+    formatted_date = {
+        'full': current_date.strftime('%Y.%m.%d'),
+        'year': current_date.year,
+        'month': current_date.month,
+        'day': current_date.day,
+        'month_str': month_kr[current_date.month]
+    }
+    
+    # word.py에서 설정된 선택된 키워드 가져오기
+    selected_keyword = session.get('selected_keyword', None)
+    
+    return render_template('index.html', 
+                         date=formatted_date, 
+                         selected_keyword=selected_keyword)
 
 if __name__ == '__main__':
     app.run(debug=True)

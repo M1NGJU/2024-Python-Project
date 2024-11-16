@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- 오늘의 날짜 -->
+        <div class="date">오늘 날짜: {{ date.full }}</div>
+        
+        <!-- 선택된 챌린지 -->
+        <div class="challenge">선택된 챌린지: {{ selected_keyword }}</div>
+    </div>
+</body>
+</html>
